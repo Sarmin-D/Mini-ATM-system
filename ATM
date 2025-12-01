@@ -1,0 +1,75 @@
+# Ask for PIN
+#  User must enter a PIN.
+#  User gets 3 chances.
+#  If the correct PIN is entered → go to the menu.
+#  If all 3 attempts are wrong → show message: "Your card is
+# blocked."
+
+menu = ("\n----- ATM Menu -----\n 1. Check Balance\n 2. Withdraw Money\n 3. Deposit Money")
+
+correct_pin = 1234
+for me in range(1):
+    pin = int(input("Enter your PIN- ")) 
+    if pin == correct_pin:
+        print("Login successful!\n")
+        print("go to the menu-", menu)  
+        
+ 
+    else:
+        print("Incorrect PIN")
+        for me in range(1):
+           pin = int(input("Enter your PIN again- "))
+        if pin == correct_pin:
+              print("Login successful!\n")
+              print("go to the menu-", menu)  
+        else:
+            print("Incorrect PIN")      
+            for me in range(1):
+                pin = int(input("Enter your PIN(Last Attempt)- "))
+                if pin == correct_pin:
+                    print("Login successful!\n")
+                    print("go to the menu-", menu)  
+                else:
+                    print("Your card is blocked due to wrong attempts.")
+                        
+
+# User will enter an option:
+#  1 → Show current balance
+#  2 → Withdraw money
+# o If balance is enough → deduct amount
+# o Otherwise → show “Insufficient balance”
+#  3 → Deposit money
+# o Add the deposit amount to the balance
+
+balance = 5000
+
+Check_Balance = 1
+Withdraw_Money = 2
+Deposit_Money = 3
+
+select_menu = int(input("Select a number from menu(1/2/3)- "))
+if select_menu == Check_Balance:
+    print("Your balance- $",balance)
+
+elif select_menu == Withdraw_Money:
+    withdraw_amount = int(input("Enter withdraw amount- "))
+    if withdraw_amount <= balance:
+        balance = (balance - withdraw_amount)
+        print("Your current balance after winthdraw- $", balance)
+    else: 
+        print("Insufficient balance")    
+
+elif select_menu == Deposit_Money:
+    deposit_amount = int(input("Enter Deposit Amount- $"))
+    balance = (balance + deposit_amount)
+    print("Your current balance after deposit- $",balance)
+
+else:
+    print("Invalid Number")
+
+    
+
+
+       
+        
+    
