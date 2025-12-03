@@ -31,7 +31,7 @@ for me in range(1):
                     print("go to the menu-", menu)  
                 else:
                     print("Your card is blocked due to wrong attempts.")
-                        
+                    exit()   
 
 # User will enter an option:
 #  1 → Show current balance
